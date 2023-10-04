@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Products{% endblock %}
+
+{% block body %}
+
+    {% if products|length > 0 %}
+        {% for product in pagination %}
+        <div class="mt-4 flex">
+            <div class="mt-4 min-w-fit">
+                {{ include('shared/_product_img.html.twig', {'height': 32, 'width': 32, product: product})}}
+            </div>
+            <div class="mb-4 ml-4">
+            <div class="text-2xl">
+                <a href="{{ path('app_product_show', {product: product.id}) }}">{{product.title}}</a>
+            </div>
+            <div class="text-xl dark:text-gray-400">
+                {{product.description}}
+            </div>
+            <div class="text-gray-500 dark:text-gray-400">
+                {{product.category}}
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                {{product.price}} zł
+            </div>
+            <div class="flex">
+                {% if is_granted('ROLE_WORKER') %}
+                <a href="{{ path('app_product_edit', { product: product.id }) }}" class="mr-2">Edytuj</a>
+                {% endif %}
+                <a href="{{ path('app_product_add_to_cart', { product: product.id, quantity: 1 }) }}" class="mr-2">Dodaj do koszyka</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="text-sm mt-4 text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div> 
+    {% else %}
+        There's is nothing yet!
+    {% endif %}
+
+{% endblock %}

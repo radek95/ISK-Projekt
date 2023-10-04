@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add new product{% endblock %}
+{% block bread %} 
+ > Dodaj
+{% endblock %}
+{% block body %}
+    {{ form_start(roleForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div>{{ form_errors(roleForm) }}</div>
+
+    <div>
+        {{ form_label(roleForm.roles, 'Wybierz nową rolę', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(roleForm.roles, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+        {{ form_errors(roleForm.roles) }}
+    </div>
+    <div>
+        <button type="submit" class="block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Prześlij</button>
+    </div>
+{{ form_end(roleForm)}}
+{% endblock %}

@@ -1,0 +1,21 @@
+{{ form_label(form.name, 'Imię', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+{{ form_widget(form.name, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+
+{{ form_label(form.surname, 'Nazwisko', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+{{ form_widget(form.surname, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+        {{ form_label(form.town, 'Miasto', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.town, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+    </div>
+
+    <div>
+        {{ form_label(form.postCode, 'Kod pocztowy', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.postCode, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800  rounded-md border p-2 mt-1 mb-2'}}) }}
+    </div>
+</div>
+
+        {{ form_label(form.phone, 'Numer telefonu', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.phone, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}  
+

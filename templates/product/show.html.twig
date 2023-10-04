@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product - {{product.title}} {% endblock %}
+
+{% block bread %} 
+    > Produkt
+{% endblock %}
+
+{% block body %}
+   <div class="mb-4">
+   {{ include('shared/_product_img.html.twig', {'height': 64, 'width': 64, product: product})}}
+    <div class="text-2xl mt-4">
+        <a href="{{ path('app_product_show', {product: product.id}) }}">{{product.title}}</a>
+    </div>
+    <div class="text-xl dark:text-gray-400">
+        {{product.description}}
+    </div>
+    <div class="text-gray-500 dark:text-gray-400">
+        {{product.category}}
+    </div>
+    <div class="text-sm text-gray-500 dark:text-gray-400">
+        {{product.price}} zł
+    </div>
+       <div class="flex">
+           {% if is_granted('ROLE_WORKER') %}
+               <a href="{{ path('app_product_edit', { product: product.id }) }}" class="mr-2">Edytuj</a>
+           {% endif %}
+           <a href="{{ path('app_product_add_to_cart', { product: product.id, quantity: 1 }) }}" class="mr-2">Dodaj do koszyka</a>
+       </div>
+    </div>         
+{% endblock %}

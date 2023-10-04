@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add new product{% endblock %}
+{% block bread %} 
+ > Dodaj
+{% endblock %}
+{% block body %}
+    {{ include('shared/_product_img.html.twig', {'height': 32, 'width': 32, product: product})}}
+    {{ include('product/_form.html.twig') }}  
+{% endblock %}

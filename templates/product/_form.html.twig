@@ -1,0 +1,32 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div>{{ form_errors(form) }}</div>
+
+    <div>
+        {{ form_label(form.title, 'nazwa', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+        {{ form_errors(form.title) }}
+    </div>
+    <div>   
+        {{ form_label(form.Description, 'opis produktu', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.Description, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+        {{ form_errors(form.Description) }}
+    </div>
+    <div>   
+        {{ form_label(form.price, 'cena', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.price, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+        {{ form_errors(form.price) }}
+    </div>
+    <div>   
+        {{ form_label(form.category, 'kategoria', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+        {{ form_widget(form.category, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+        {{ form_errors(form.category) }}
+    </div>
+    <div class="mt-4">
+        {{form_label(form.productImage, 'wgraj zdjęcie', {'label_attr':{'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 cursor-pointer rounded-md border p-2'}})}}
+        {{form_widget(form.productImage, {'attr': {'class': 'hidden'}})}}
+        {{form_errors(form.productImage)}}
+    </div>
+    <div>
+        <button type="submit" class="block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Prześlij</button>
+    </div>
+{{ form_end(form)}}

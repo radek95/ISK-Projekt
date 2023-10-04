@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Users{% endblock %}
+
+{% block body %}
+
+    {% if users|length > 0 %}
+        {% for user in users %}
+            <div class="mb-4">
+            <div class="text-xl dark:text-gray-400">
+                {{user.id}}
+            </div>
+            <div class="text-xl dark:text-gray-400">
+                {{user.email}}
+            </div>
+            <div class="flex">
+            Aktualna rola:  {{user.roles|join(' | ')}}
+            </div>
+            <a href="{{ path('app_user_role', { user: user.id }) }}" class="mr-2"> Edytuj</a>
+            </div>
+
+        {% endfor %} 
+    {% endif %}
+
+{% endblock %}

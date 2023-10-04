@@ -1,0 +1,7 @@
+{% if product and product.image %}
+<img src="/uploads/products/{{product.image}}"
+  class="inline-block h-{{height}} w-{{width}} rounded-md ring-2 ring-white dark:ring-gray-600" />
+{% else %}
+  <img src="/uploads/products/placeholder.jpg"
+  class="inline-block h-{{height}} w-{{width}} rounded-md ring-2 ring-white dark:ring-gray-600" />
+{% endif %}

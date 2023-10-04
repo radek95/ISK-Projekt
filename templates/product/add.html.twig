@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add new product{% endblock %}
+{% block bread %} 
+ > Dodaj
+{% endblock %}
+{% block body %}
+    {{ include('product/_form.html.twig') }}
+{% endblock %}
